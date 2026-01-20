@@ -1,0 +1,617 @@
+/* Global Styles & Reset */
+:root {
+    --primary-color: #FFB7B2;
+    /* Pastel Pink */
+    --secondary-color: #AECBFA;
+    /* Pastel Blue */
+    --accent-color: #FFF2CC;
+    /* Pastel Yellow */
+    --success-color: #B9F6CA;
+    /* Pastel Green */
+    --text-color: #4A4A4A;
+    --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --font-main: 'Jua', sans-serif;
+}
+
+/* Landing Page Styles */
+#landing-page {
+    background: url('bg.png') no-repeat center center/cover;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.landing-content {
+    background: rgba(255, 255, 255, 0.85);
+    padding: 3rem;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(5px);
+    margin-bottom: 2rem;
+    border: 4px solid #fff;
+}
+
+.main-title {
+    font-size: 4rem;
+    color: #ff6f61;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 0px #fff, 4px 4px 0px rgba(0,0,0,0.1);
+    animation: bounce 2s infinite;
+}
+
+.landing-footer {
+    font-family: 'Nunito', sans-serif;
+    color: #555;
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-shadow: none;
+}
+
+.btn-entry {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: #fff;
+    border: 3px solid #FFB7B2;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-size: 1.2rem;
+    color: #e91e63;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.house-icon {
+    font-size: 1.5rem;
+}
+
+.btn-entry:hover {
+    transform: scale(1.1);
+    background: #FFF2CC;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-gradient);
+    color: var(--text-color);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Prevent scrolling, focus on steps */
+    font-size: 20px;
+}
+
+main#app {
+    width: 100%;
+    max-width: 900px;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 2rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    80% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+section {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center content vertically */
+    animation: fadeIn 0.6s ease-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Typography & Common UI */
+h1 {
+    font-size: 2.5rem;
+    color: #ff6f61;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+button {
+    font-family: var(--font-main);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 15px;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Teacher Guide Section */
+#teacher-guide {
+    justify-content: flex-start;
+    /* Start from top */
+    padding-top: 2rem;
+}
+
+.guide-container {
+    width: 100%;
+    max-width: 800px;
+}
+
+.guide-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.guide-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 2px solid #fff;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.curriculum-list li {
+    list-style: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.badge.com {
+    background-color: #FFABAB;
+}
+
+.badge.math {
+    background-color: #85E3FF;
+    color: #333;
+}
+
+.badge.soc {
+    background-color: #B9F6CA;
+    color: #333;
+}
+
+.flow-steps {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: #ccc;
+}
+
+.notice {
+    background-color: #fff9c4;
+    /* Light yellow */
+    border-color: #fff59d;
+}
+
+.action-area {
+    text-align: center;
+    margin-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.btn-start {
+    background: #FF6F61;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+}
+
+/* Game Intro */
+.story-book {
+    display: flex;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+}
+
+.book-page {
+    flex: 1;
+    padding: 1rem;
+}
+
+.book-page.right {
+    border-left: 2px dashed #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.illustration-placeholder {
+    width: 100%;
+    height: 300px;
+    background: #e3f2fd;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-squirrel {
+    animation: bounce 2s infinite;
+}
+
+/* Intro Controls */
+.intro-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.btn-next {
+    background: #4facfe;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(79, 172, 254, 0.4);
+}
+
+/* Missions Common */
+.mission-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mission-badge {
+    background: #333;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.feedback {
+    margin-top: 2rem;
+    text-align: center;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.feedback-msg {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Mission 1: Quiz */
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.quiz-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-image {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.question {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+.options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-option {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    color: white;
+}
+
+.o-btn {
+    background-color: #81C784;
+}
+
+.x-btn {
+    background-color: #E57373;
+}
+
+/* Mission 2: Math */
+.math-problem-area {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.objects-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.acorn {
+    font-size: 4rem;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.2));
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.acorn:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.number-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.number-grid button {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    background: #f0f0f0;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.number-grid button:hover {
+    background: #AECBFA;
+    color: white;
+    border-color: #AECBFA;
+}
+
+/* Mission 3: Writing */
+.writing-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.word-card {
+    background: #fff;
+    padding: 1.5rem 3rem;
+    border-radius: 20px;
+    border: 3px dashed #FFB7B2;
+}
+
+.target-word {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 5px;
+}
+
+#word-input {
+    font-family: var(--font-main);
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    text-align: center;
+    outline: none;
+    width: 300px;
+}
+
+#word-input:focus {
+    border-color: #FFB7B2;
+    box-shadow: 0 0 10px rgba(255, 183, 178, 0.5);
+}
+
+.btn-check {
+    background: #9575CD;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+}
+
+/* Reward */
+.reward-container {
+    text-align: center;
+}
+
+.cookie-box {
+    margin: 3rem auto;
+    cursor: pointer;
+}
+
+.cookie {
+    font-size: 8rem;
+    transition: transform 0.5s;
+    animation: bounce 3s infinite;
+}
+
+.cookie:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+.fortune-text {
+    font-size: 1.8rem;
+    color: #E91E63;
+    background: #FCE4EC;
+    padding: 1.5rem;
+    border-radius: 20px;
+    margin: 2rem 0;
+    border: 2px solid #F8BBD0;
+}
+
+.btn-restart {
+    background: #607D8B;
+    color: white;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    main#app {
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .guide-content {
+        grid-template-columns: 1fr;
+    }
+
+    .story-book {
+        flex-direction: column;
+    }
+
+    .book-page.right {
+        border-left: none;
+        border-top: 2px dashed #ddd;
+    }
+}
